@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  max-width: 100rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.head {
+  display: flex;
+  margin-bottom: 4.2rem;
+  justify-content: center;
+}
+.lang-btns {
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.6rem;
+}
+
+.game-name {
+  font-size: 4.8rem;
+}
+
+.app {
+  width: 60rem;
+  padding: 2.3rem 5.6rem;
+  padding-right: 8.4rem;
+  background-color: bisque;
+  position: relative;
+}
+
+.scoreboard {
+  padding: 3.2rem;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 30rem;
+  overflow-y: scroll;
+  margin-bottom: 5.6rem;
+}
+
+.first-block {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+}
+
+.secret-num-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  background-color: black;
+  font-size: 8.4rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  color: aliceblue;
+  transition: all 0.4s;
+}
+
+.points-block {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 5.6rem;
+  font-size: 2.2rem;
+  top: 50%;
+  right: 18%;
+  transform: translate(25%, -50%);
+}
+
+.second-block {
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: center;
+  row-gap: 2.8rem;
+}
+
+.num-input {
+  font-size: 7.4rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  text-align: center;
+  border: none;
+  padding: 2.4rem;
+  transition: all 0.3s;
+}
+
+.message {
+  font-size: 2.8rem;
+  grid-column: 1/-1;
+  transition: all 0.3s;
+}
+
+.again {
+  margin-right: 3.4rem;
+}
+
+/* .submit {
+  grid-column: 2/3;
+}  */
+
+.btns {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.btn {
+  min-width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  text-transform: uppercase;
+}
+
+.scoreboard-list {
+  list-style: none;
+}
+
+.column-title {
+  display: flex;
+  font-size: 2.6rem;
+  gap: 8.6rem;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+.list-item {
+  display: flex;
+  text-transform: uppercase;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 8.6rem;
+}
+
+/* .modal::before {
+  position: absolute;
+  top: 0;
+
+  content: "";
+  backdrop-filter: blur(5px);
+  background-color: rgb(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+} */
+
+.modal {
+  background-color: brown;
+  font-size: 1.8rem;
+  padding: 5.6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: center;
+  width: fit-content;
+  transition: all 0.3s;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.btns-modal {
+  display: flex;
+  gap: 2.8rem;
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  display: none;
+}
+
+.box-input label {
+  font-size: 1.4rem;
+}
+
+.box-input input {
+  font-size: 1.8rem;
+}
+
+.modal button {
+  padding: 1rem 1.6rem;
+}
+
+table {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+th {
+  text-transform: uppercase;
+}
+
+th,
+td {
+  padding: 1.6rem;
+}
