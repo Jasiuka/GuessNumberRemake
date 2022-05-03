@@ -19,9 +19,9 @@
       <div class="container">
         <div class="app">
           <div class="modal hidden">
-            <p>Do you want to save your highscore?</p>
+            <p class="save-score-text">Do you want to save your highscore?</p>
             <form class="box-input">
-              <label for="name">Your name</label>
+              <label class="form-label" for="name">Your name</label>
               <input
                 class="name"
                 type="text"
@@ -32,8 +32,8 @@
               />
             </form>
             <div class="btns-modal">
-              <button class="btn-yes">Yes</button>
-              <button class="btn-no">No</button>
+              <button class="btn-modal btn-yes">Yes</button>
+              <button class="btn-modal btn-no">No</button>
             </div>
           </div>
           <div class="lang-btns">
@@ -49,25 +49,31 @@
             </div>
             <input class="num-input" type="number" max="20" required />
             <div class="points-block">
-              <p class="points-text">
-                Points: <span class="points-num">20</span>
-              </p>
-              <p class="highscore-text">
-                Highscore: <span class="high-points-num">0</span>
-              </p>
+              <div class="points-box poi">
+                <p class="points-text">Points:</p>
+                <span class="points-num">20</span>
+              </div>
+              <div class="points-box">
+                <p class="highscore-text">Highscore:</p>
+                <span class="high-points-num">0</span>
+              </div>
             </div>
           </div>
           <div class="second-block">
             <div class="btns">
-              <button class="btn again">Again</button>
-              <button class="btn submit">Submit</button>
+              <button class="btn again">
+                <ion-icon class="icon" name="repeat-outline"></ion-icon>
+              </button>
+              <button class="btn submit">
+                <ion-icon class="icon" name="checkmark-outline"></ion-icon>
+              </button>
             </div>
             <p class="message">Guess number..</p>
           </div>
         </div>
-        <section class="scoreboard">
+        <section>
           <h2 class="scoreboard-title">Scoreboard</h2>
-          <table>
+          <table class="scoreboard">
             <thead>
               <tr>
                 <th class="sb-list-name">name</th>
@@ -88,5 +94,14 @@
         </section>
       </div>
     </main>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

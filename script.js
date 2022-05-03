@@ -1,5 +1,8 @@
 "use strict";
 
+// color for wrong input: #fa5252
+// color for correct input: #51cf66
+
 // general
 const secretBox = document.querySelector(".secret-num-box");
 const modal = document.querySelector(".modal");
@@ -25,6 +28,8 @@ const scoreboardList_name = document.querySelector(".sb-list-name");
 const scoreboardList_score = document.querySelector(".sb-list-score");
 const pointsText = document.querySelector(".points-text");
 const highscoreText = document.querySelector(".highscore-text");
+const formLabel = document.querySelector(".form-label");
+const modalTitle = document.querySelector(".save-score-text");
 
 // numbers
 const pointsNum = document.querySelector(".points-num");
@@ -49,6 +54,7 @@ class App {
   #highscore = 0;
   #lithuanian = false;
   #players = [];
+  #gameon = false;
 
   constructor(input) {
     this.input = input;
@@ -68,7 +74,8 @@ class App {
 
     inputNameBox.addEventListener("submit", this._submitPlayer.bind(this));
 
-    // btnLT.addEventListener("click", this._lithuanianLang.bind(this));
+    btnLT.addEventListener("click", this._lithuanianLang.bind(this));
+    btnEN.addEventListener("click", this._englishLang.bind(this));
   }
 
   _generateRandom() {
@@ -78,10 +85,13 @@ class App {
 
   _submitNum() {
     this.input = Number(inputNum.value);
+    this.#gameon = true;
 
     // check if input number is valid
     if (this.input <= 0 || !this.input) {
-      message.textContent = "Number should be positive";
+      message.textContent = !this.#lithuanian
+        ? "Number should be positive"
+        : "Skaičius turėtų būt teigiamas";
     } else {
       // correct number
       this._correctNumber();
@@ -93,15 +103,18 @@ class App {
 
   _correctNumber() {
     if (this.input === this.#random) {
-      secretBox.style.backgroundColor = "green";
+      secretBox.style.backgroundColor = "#51cf66";
+      inputNum.style.boxShadow = "0 0 12px #51cf66";
       secretNum.textContent = this.#random;
-      message.textContent = "Correct number!";
+      message.textContent = !this.#lithuanian
+        ? "Correct number!"
+        : "Teisingas skaičius!";
       this.#game = false;
       // change highscore if points are higher
       if (this.#points > this.#highscore) {
         this.#highscore = this.#points;
         highScore.textContent = this.#highscore;
-        modal.classList.remove("hidden");
+        setTimeout(() => modal.classList.remove("hidden"), 1500);
       }
     }
   }
@@ -111,22 +124,32 @@ class App {
       if (this.#points === 1) {
         this.#points = 0;
         pointsNum.textContent = this.#points;
-        message.textContent = "Game Over!";
+        message.textContent = !this.#lithuanian
+          ? "Game Over!"
+          : "Žaidimo pabaiga!";
         this.#game = false;
       } else {
         if (this.input !== this.#random && this.#game) {
           //   secretBox.style.backgroundColor = "red";
-          message.style.color = "red";
-          inputNum.style.boxShadow = "0 0 24px red";
+          message.style.color = "#fa5252";
+          inputNum.style.boxShadow = "0 0 24px #fa5252";
           setTimeout(function () {
-            message.style.color = "black";
-            secretBox.style.backgroundColor = "black";
+            message.style.color = "#212529";
+            secretBox.style.backgroundColor = "#343a40";
             inputNum.style.boxShadow = "none";
-          }, 1000);
+          }, 500);
           message.textContent =
             this.input < this.#random
-              ? "Number is too small!"
-              : "Number is too big!";
+              ? `${
+                  !this.#lithuanian
+                    ? "Number is too small!"
+                    : "Skaičius per mažas!"
+                }`
+              : `${
+                  !this.#lithuanian
+                    ? "Number is too big!"
+                    : "Skaičius per didelis!"
+                }`;
           this.#points--;
           pointsNum.textContent = this.#points;
         }
@@ -135,17 +158,23 @@ class App {
   }
 
   _initialParam() {
+    this.#gameon = false;
     pointsNum.textContent = this.#points = 20;
     this.#game = true;
-    message.textContent = "Guess number..";
+    message.textContent = !this.#lithuanian
+      ? "Guess number.."
+      : "Spėk skaičiu..";
     inputNum.value = "";
-    secretBox.style.backgroundColor = "black";
+    secretBox.style.backgroundColor = "#343a40";
+    inputNum.style.boxShadow = "none";
     secretNum.textContent = "?";
+    modalTitle.style.display = "block";
     this._generateRandom();
   }
 
   _pressYes() {
     modalBtns.style.display = "none";
+    modalTitle.style.display = "none";
     inputNameBox.style.display = "flex";
   }
 
@@ -156,6 +185,7 @@ class App {
   _submitPlayer(e) {
     e.preventDefault();
     const name = nameInput.value;
+    nameInput.value = "";
     const score = this.#highscore;
     let player;
     console.log(this.#highscore);
@@ -191,14 +221,39 @@ class App {
   }
 
   _lithuanianLang() {
-    this.#lithuanian = true;
-    gameName.textContent = "Spėk Skaičių";
-    message.textContent = "Spėk skaičiu..";
-    scoreboardTitle.textContent = "Rezultatai";
-    scoreboardList_name.textContent = "Vardas";
-    scoreboardList_score.textContent = "Aukščiausias rez.";
-    pointsText.textContent = "Taškai:";
-    highscoreText.textContent = "Geriausias rezultatas:";
+    if (!this.#gameon) {
+      this.#lithuanian = true;
+      gameName.textContent = "Spėk Skaičių";
+      message.textContent = "Spėk skaičiu..";
+      scoreboardTitle.textContent = "Rezultatai";
+      scoreboardList_name.textContent = "Vardas";
+      scoreboardList_score.textContent = "Aukščiausias rez.";
+      pointsText.textContent = "Taškai:";
+      pointsNum.textContent = this.#points;
+      highscoreText.textContent = "Geriausias rezultatas:";
+      highScore.textContent = this.#highscore;
+      formLabel.textContent = "Tavo vardas";
+      modalTitle.textContent = "Ar norite išsaugoti savo rezultatą?";
+      btnYes.textContent = "Taip";
+      btnNo.textContent = "Ne";
+    }
+  }
+
+  _englishLang() {
+    if (!this.#gameon) {
+      this.#lithuanian = false;
+      gameName.textContent = "Guess Number";
+      message.textContent = "Guess number..";
+      scoreboardTitle.textContent = "Scoreboard";
+      scoreboardList_name.textContent = "Name";
+      scoreboardList_score.textContent = "Highscore";
+      pointsText.textContent = "Points:";
+      pointsNum.textContent = this.#points;
+      highscoreText.textContent = "Highscore:";
+      highScore.textContent = this.#highscore;
+      formLabel.textContent = "Your name";
+      modalTitle.textContent = "Do you want to save your highscore?";
+    }
   }
 }
 

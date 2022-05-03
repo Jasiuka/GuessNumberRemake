@@ -1,12 +1,25 @@
+/* COLORS:
+app background : #dbe4ff   #c5f6fa
+greys: #343a40  // text-color : #212529 / #c5f6fa
+hovers : #3bc9db
+
+*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0.6rem #3bc9db;
+}
+
 body {
   font-size: 62.5%;
   font-family: "Rubik", sans-serif;
+  color: #212529;
 }
 
 .container {
@@ -30,6 +43,19 @@ body {
   display: flex;
   justify-content: flex-end;
   gap: 1.6rem;
+  background-color: transparent;
+}
+
+.lang-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover,
+.lang-btn:active {
+  color: #3bc9db;
 }
 
 .game-name {
@@ -37,22 +63,24 @@ body {
 }
 
 .app {
+  margin-top: 2.4rem;
   width: 60rem;
   padding: 2.3rem 5.6rem;
   padding-right: 8.4rem;
-  background-color: bisque;
+  background-color: #c5f6fa;
   position: relative;
+  border-radius: 12px;
 }
 
 .scoreboard {
-  padding: 3.2rem;
-  background-color: aqua;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* padding: 3.2rem; */
+  width: 30rem;
+  border-radius: 12px;
   max-height: 30rem;
   overflow-y: scroll;
+  margin-top: 1.6rem;
   margin-bottom: 5.6rem;
+  border-collapse: collapse;
 }
 
 .first-block {
@@ -68,13 +96,13 @@ body {
   position: absolute;
   top: 50%;
   left: 13%;
-  background-color: black;
+  background-color: #343a40;
   font-size: 8.4rem;
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
   transform: translateY(-50%);
-  color: aliceblue;
+  color: #c5f6fa;
   transition: all 0.4s;
 }
 
@@ -83,9 +111,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5.6rem;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   top: 50%;
-  right: 18%;
+  right: 14%;
   transform: translate(25%, -50%);
 }
 
@@ -98,11 +126,13 @@ body {
 
 .num-input {
   font-size: 7.4rem;
+  color: #212529;
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
   text-align: center;
   border: none;
+  outline: none;
   padding: 2.4rem;
   transition: all 0.3s;
 }
@@ -111,6 +141,7 @@ body {
   font-size: 2.8rem;
   grid-column: 1/-1;
   transition: all 0.3s;
+  font-weight: 500;
 }
 
 .again {
@@ -131,10 +162,27 @@ body {
   height: 5rem;
   border-radius: 50%;
   text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.btn:hover,
+.btn:active {
+  color: #3bc9db;
+  background-color: #e3fafc;
 }
 
 .scoreboard-list {
   list-style: none;
+}
+
+.scoreboard-title {
+  font-size: 2.4rem;
+  text-align: center;
 }
 
 .column-title {
@@ -153,6 +201,16 @@ body {
   gap: 8.6rem;
 }
 
+.points-box {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+.points-box span {
+  font-weight: bold;
+}
+
 /* .modal::before {
   position: absolute;
   top: 0;
@@ -165,9 +223,11 @@ body {
 } */
 
 .modal {
-  background-color: brown;
+  background-color: #343a40;
+  color: #c5f6fa;
   font-size: 1.8rem;
   padding: 5.6rem;
+  border-radius: 12px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -192,6 +252,21 @@ body {
   gap: 2.8rem;
 }
 
+.btn-modal {
+  background-color: transparent;
+  border: none;
+  color: #c5f6fa;
+  font-size: 1.6rem;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.btn-modal:hover,
+.btn-modal:active {
+  color: #3bc9db;
+  background-color: #e3fafc;
+}
+
 .box-input {
   display: flex;
   flex-direction: column;
@@ -205,6 +280,7 @@ body {
 
 .box-input input {
   font-size: 1.8rem;
+  font-family: "Rbuik", sans-serif;
 }
 
 .modal button {
@@ -214,13 +290,39 @@ body {
 table {
   font-size: 1.8rem;
   text-align: center;
+  border-radius: 12px;
 }
 
-th {
+thead th {
   text-transform: uppercase;
+  background-color: #c5f6fa;
+  /* border-radius: 12px; */
+  padding: 1.8rem;
+  width: 50%;
 }
 
 th,
 td {
   padding: 1.6rem;
+}
+
+.sb-list-name {
+  border-radius: 12px 0 0 0;
+}
+
+.sb-list-score {
+  border-radius: 0 12px 0 0;
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #e3fafc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f4fdfe;
 }
