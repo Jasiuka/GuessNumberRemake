@@ -13,4 +13,6 @@ Also using local storage added possibility to save highscores.
 - Responsive design 
 - Language change (EN - LT)
 - Highscore saving
+
+
 Link to the game: https://jasiuka.github.io/GuessNumberRemake/
