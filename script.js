@@ -224,7 +224,7 @@ class App {
     if (!this.#gameon) {
       this.#lithuanian = true;
       gameName.textContent = "Spėk Skaičių";
-      message.textContent = "Spėk skaičiu..";
+      message.textContent = "Spėk skaičių..";
       scoreboardTitle.textContent = "Rezultatai";
       scoreboardList_name.textContent = "Vardas";
       scoreboardList_score.textContent = "Aukščiausias rez.";
