@@ -39,6 +39,11 @@
     font-size: 6.8rem;
   }
 
+  .secret-num-box {
+    left: 9%;
+    top: 50%;
+  }
+
   .icon {
     width: 2.2rem;
     height: 2.2rem;
@@ -53,6 +58,16 @@
 @media (max-width: 49em) {
   html {
     font-size: 50%;
+  }
+
+  .num-input,
+  .secret-num-box {
+    font-size: 5.2rem;
+  }
+
+  .secret-num-box {
+    left: 11%;
+    top: 50%;
   }
 }
 /* 384px */
@@ -69,12 +84,12 @@
   .secret-num-box {
     width: 10rem;
     height: 10rem;
-    font-size: 6.2rem;
+    font-size: 4.8rem;
   }
 
   .secret-num-box {
-    left: 16%;
-    top: 48%;
+    left: 12%;
+    top: 47.5%;
   }
 
   .btns {
@@ -144,7 +159,7 @@
   .secret-num-box {
     width: 7rem;
     height: 7rem;
-    font-size: 5.4rem;
+    font-size: 2.1rem;
   }
 
   .secret-num-box {
