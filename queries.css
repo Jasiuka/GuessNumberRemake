@@ -1,0 +1,181 @@
+/* 1056px */
+@media (max-width: 66em) {
+  .app {
+    max-width: 45rem;
+  }
+
+  .points-box {
+    font-size: 1.4rem;
+  }
+
+  .message {
+    font-size: 2.5rem;
+  }
+
+  .game-name {
+    font-size: 4.2rem;
+  }
+
+  .scoreboard-title {
+    font-size: 2.1rem;
+  }
+
+  .column-title {
+    font-size: 2.4rem;
+  }
+
+  .list-item {
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 1.5rem;
+  }
+
+  .num-input,
+  .secret-num-box {
+    width: 13rem;
+    height: 13rem;
+    font-size: 6.8rem;
+  }
+
+  .icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .lang-btn {
+    font-size: 1rem;
+  }
+}
+
+/* 784px */
+@media (max-width: 49em) {
+  html {
+    font-size: 50%;
+  }
+}
+/* 384px */
+@media (max-width: 24em) {
+  .app {
+    max-width: 38rem;
+  }
+
+  .head {
+    margin-bottom: 2.1rem;
+  }
+
+  .num-input,
+  .secret-num-box {
+    width: 10rem;
+    height: 10rem;
+    font-size: 6.2rem;
+  }
+
+  .secret-num-box {
+    left: 16%;
+    top: 48%;
+  }
+
+  .btns {
+    gap: 0;
+  }
+
+  .second-block {
+    row-gap: 1.2rem;
+  }
+
+  .game-name {
+    font-size: 3.2rem;
+  }
+
+  .points-block {
+    gap: 3.2rem;
+  }
+
+  .scoreboard {
+    max-width: 20rem;
+  }
+
+  .points-box {
+    font-size: 1.2rem;
+  }
+}
+
+/* 304px */
+
+@media (max-width: 19em) {
+  .modal {
+    font-size: 1.4rem;
+    padding: 2.6rem;
+  }
+
+  .btn-modal {
+    font-size: 1.3rem;
+  }
+
+  .box-input label {
+    font-size: 1rem;
+  }
+
+  .box-input input {
+    font-size: 1.4rem;
+  }
+
+  .modal button {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .game-name {
+    font-size: 2.6rem;
+  }
+
+  .lang-btn {
+    font-size: 0.8rem;
+  }
+
+  .again,
+  .submit {
+    max-width: 3rem;
+    height: 3rem;
+  }
+
+  .num-input,
+  .secret-num-box {
+    width: 7rem;
+    height: 7rem;
+    font-size: 5.4rem;
+  }
+
+  .secret-num-box {
+    left: 21%;
+  }
+
+  .points-block {
+    gap: 2.4rem;
+  }
+
+  .message {
+    font-size: 2rem;
+  }
+
+  .scoreboard {
+    max-width: 15rem;
+  }
+
+  .scoreboard-title {
+    font-size: 1.8rem;
+  }
+
+  thead th {
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 1.2rem;
+  }
+
+  .app {
+    max-width: 34rem;
+  }
+}
