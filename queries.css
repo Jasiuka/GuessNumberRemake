@@ -41,7 +41,7 @@
 
   .secret-num-box {
     left: 9%;
-    top: 50%;
+    top: 49.5%;
   }
 
   .icon {
@@ -67,7 +67,7 @@
 
   .secret-num-box {
     left: 11%;
-    top: 50%;
+    top: 49.5%;
   }
 }
 /* 384px */
@@ -89,7 +89,7 @@
 
   .secret-num-box {
     left: 12%;
-    top: 47.5%;
+    top: 47%;
   }
 
   .btns {
@@ -115,11 +115,18 @@
   .points-box {
     font-size: 1.2rem;
   }
+
+  .message {
+    font-size: 2.3rem;
+  }
 }
 
 /* 304px */
 
 @media (max-width: 19em) {
+  .secret-num-box {
+    top: 49%;
+  }
   .modal {
     font-size: 1.4rem;
     padding: 2.6rem;
