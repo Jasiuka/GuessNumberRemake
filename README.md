@@ -8,7 +8,7 @@ tried to create my own designed version. Link to the old version: https://github
 
 
 Now I wanted to remake this game, because I have more knowledge of HTML & CSS and also with JavaScript.
-This time I used JavaScript classes for code architecture, with private fields, incapsulated functions, etc.
+This time I used JavaScript classes for code architecture, with private fields, encapsulated functions, etc.
 Also using local storage added possibility to save highscores.
 - Responsive design 
 - Language change (EN - LT)
